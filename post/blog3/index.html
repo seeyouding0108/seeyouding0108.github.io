@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Hugo Website erstellen - Siyu&#39;site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.75.1" /><meta itemprop="name" content="Hugo Website erstellen">
+<meta itemprop="description" content="Hugo Website erstellen(Verbereitungsphase) 1）Notwendige Werkzeuge  homebrew （Es ist ein Softwaresverwaltungstool unter Mac OS, mit dem Sie problemlos Softwaretools usw. installieren / deinstallieren können, ähnlich wie Softwaresverwaltungstools wie apt-get unter Linux und npm von node） hugo （Hugo ist ein statischer Website-Generator, der von der Sprache Go geschieben wird. Einfach, benutzerfreundlich, effizient, leicht zu erweitern und schnell bereitzustellen.） git （Versionskontrolle）  2)Installationsmethode homebrew：  eingeben im Terminal /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.">
+<meta itemprop="datePublished" content="2020-10-09T12:38:06+02:00" />
+<meta itemprop="dateModified" content="2020-10-09T12:38:06+02:00" />
+<meta itemprop="wordCount" content="241">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta property="og:title" content="Hugo Website erstellen" />
+<meta property="og:description" content="Hugo Website erstellen(Verbereitungsphase) 1）Notwendige Werkzeuge  homebrew （Es ist ein Softwaresverwaltungstool unter Mac OS, mit dem Sie problemlos Softwaretools usw. installieren / deinstallieren können, ähnlich wie Softwaresverwaltungstools wie apt-get unter Linux und npm von node） hugo （Hugo ist ein statischer Website-Generator, der von der Sprache Go geschieben wird. Einfach, benutzerfreundlich, effizient, leicht zu erweitern und schnell bereitzustellen.） git （Versionskontrolle）  2)Installationsmethode homebrew：  eingeben im Terminal /usr/bin/ruby -e &quot;$(curl -fsSL https://raw." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="seeyouding0108.github.io/post/blog3/" />
+<meta property="article:published_time" content="2020-10-09T12:38:06+02:00" />
+<meta property="article:modified_time" content="2020-10-09T12:38:06+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo Website erstellen"/>
+<meta name="twitter:description" content="Hugo Website erstellen(Verbereitungsphase) 1）Notwendige Werkzeuge  homebrew （Es ist ein Softwaresverwaltungstool unter Mac OS, mit dem Sie problemlos Softwaretools usw. installieren / deinstallieren können, ähnlich wie Softwaresverwaltungstools wie apt-get unter Linux und npm von node） hugo （Hugo ist ein statischer Website-Generator, der von der Sprache Go geschieben wird. Einfach, benutzerfreundlich, effizient, leicht zu erweitern und schnell bereitzustellen.） git （Versionskontrolle）  2)Installationsmethode homebrew：  eingeben im Terminal /usr/bin/ruby -e &quot;$(curl -fsSL https://raw."/>
+<meta name="twitter:site" content="@example"/>
+<link rel="stylesheet" href="/seeyouding0108.github.io/css/bundle.min.d9e04ae08c9b3049b766dbd4aeab7d862c5ea1d13679b621490e0f5df5507497.css" integrity="sha256-2eBK4IybMEm3ZtvUrqt9hixeodE2ebYhSQ4PXfVQdJc="><link rel="stylesheet" href="/seeyouding0108.github.io/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/seeyouding0108.github.io/" class="nav">
+        
+          Hugo Website erstellen
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/seeyouding0108.github.io/post/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/seeyouding0108.github.io/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/seeyouding0108.github.io/post/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/seeyouding0108.github.io/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/seeyouding0108.github.io/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+    
+      
+        <a href="/seeyouding0108.github.io/pt" lang="pt" class="nav no-lang link">Português (pt)</a>
+      
+    
+      
+    
+      
+        <a href="/seeyouding0108.github.io/fr" lang="fr" class="nav no-lang link">Français (fr)</a>
+      
+    
+      
+        <a href="/seeyouding0108.github.io/pl" lang="pl" class="nav no-lang link">Polski (pl)</a>
+      
+    
+      
+        <a href="/seeyouding0108.github.io/de" lang="de" class="nav no-lang link">Deutsche (de)</a>
+      
+    
+      
+        <a href="/seeyouding0108.github.io/es" lang="es" class="nav no-lang link">Española (es)</a>
+      
+    
+      
+        <a href="/seeyouding0108.github.io/zh-cn" lang="zh-cn" class="nav no-lang link">中文 (zh-cn)</a>
+      
+    
+      
+        <a href="/seeyouding0108.github.io/zh-tw" lang="zh-tw" class="nav no-lang link">中文 (zh-tw)</a>
+      
+    
+      
+        <a href="/seeyouding0108.github.io/ja" lang="ja" class="nav no-lang link">日本語 (ja)</a>
+      
+    
+      
+        <a href="/seeyouding0108.github.io/nl" lang="nl" class="nav no-lang link">Nederlands (nl)</a>
+      
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Hugo%20Website%20erstellen&amp;url=seeyouding0108.github.io%2fpost%2fblog3%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=seeyouding0108.github.io%2fpost%2fblog3%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=seeyouding0108.github.io%2fpost%2fblog3%2f&amp;title=Hugo%20Website%20erstellen" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=seeyouding0108.github.io%2fpost%2fblog3%2f&amp;title=Hugo%20Website%20erstellen" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=seeyouding0108.github.io%2fpost%2fblog3%2f&amp;description=Hugo%20Website%20erstellen" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=seeyouding0108.github.io%2fpost%2fblog3%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/seeyouding0108.github.io/"><img src="https://i.loli.net/2020/10/05/qoPXw3tTHBiAKbe.jpg" class="circle" width="100" alt="Hugo Future Imperfect Slim" /></a>
+  <header>
+    <h1>Siyu</h1>
+  </header>
+  <main>
+    <p>My Blog by <a href='http://html5up.net'>HTML5 UP</a>.</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/seeyouding0108/seeyouding0108.github.io" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/example" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+<li><a href="//linkedin.com/company/examplebusiness" target="_blank" rel="noopener" title="LinkedIn Company" class="fab fa-linkedin"></a></li>
+
+
+
+<li><a href="//facebook.com/example" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+<li><a href="//reddit.com/user/example" target="_blank" rel="noopener" title="Reddit" class="fab fa-reddit"></a></li>
+
+
+
+
+
+
+
+<li><a href="//instagram.com/example" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/example" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+<li><a href="//pinterest.com/example" target="_blank" rel="noopener" title="Pinterest" class="fab fa-pinterest-p"></a></li>
+<li><a href="//telegram.me/example" target="_blank" rel="noopener" title="telegram" class="fab fa-telegram"></a></li>
+
+
+
+<li><a href="//researchgate.net/profile/example" target="_blank" rel="noopener" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
+<li><a href="//keybase.io/example" target="_blank" rel="noopener" title="keybase" class="fab fa-keybase"></a></li>
+<li><a href="//example.com/@example" target="_blank" rel="noopener" title="mastodon" class="fab fa-mastodon"></a></li>
+<li><a href="mailto:example" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="seeyouding0108.github.io/post/blog3/">Hugo Website erstellen</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-10-09 12:38:06 &#43;0200 CEST">October 9, 2020</time>
+    
+    <p>2-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Hugo%20Website%20erstellen&amp;url=seeyouding0108.github.io%2fpost%2fblog3%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=seeyouding0108.github.io%2fpost%2fblog3%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=seeyouding0108.github.io%2fpost%2fblog3%2f&amp;title=Hugo%20Website%20erstellen" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=seeyouding0108.github.io%2fpost%2fblog3%2f&amp;title=Hugo%20Website%20erstellen" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=seeyouding0108.github.io%2fpost%2fblog3%2f&amp;description=Hugo%20Website%20erstellen" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=seeyouding0108.github.io%2fpost%2fblog3%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      
+      <p><img src="https://i.loli.net/2020/10/09/W8hEeJQF4lBiPV3.png" alt="hugo-logo.png"></p>
+<h1 id="hugo-website-erstellenverbereitungsphase">Hugo Website erstellen(Verbereitungsphase)</h1>
+<h2 id="1notwendige-werkzeuge">1）Notwendige Werkzeuge</h2>
+<ul>
+<li>homebrew （Es ist ein Softwaresverwaltungstool unter Mac OS, mit dem Sie problemlos Softwaretools usw. installieren / deinstallieren können, ähnlich wie Softwaresverwaltungstools wie apt-get unter Linux und npm von node）</li>
+<li>hugo （Hugo ist ein statischer Website-Generator, der von der Sprache Go geschieben wird. Einfach, benutzerfreundlich, effizient, leicht zu erweitern und schnell bereitzustellen.）</li>
+<li>git （Versionskontrolle）</li>
+</ul>
+<h2 id="2installationsmethode">2)Installationsmethode</h2>
+<h3 id="homebrew">homebrew：</h3>
+<ul>
+<li>eingeben im Terminal <code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install</code>
+Automatisch installieren</li>
+</ul>
+<h3 id="hogo">hogo</h3>
+<ul>
+<li><code>brew install hugo</code></li>
+</ul>
+<h3 id="git">git：</h3>
+<ul>
+<li><code>brew install git</code></li>
+</ul>
+<hr>
+<h1 id="hugo-wesite-erstellenprozess">Hugo Wesite erstellen(Prozess)</h1>
+<ul>
+<li>
+<p><code>hugo new site myblog</code>
+<em><strong>Site generieren</strong></em>   &ldquo;myblog&rdquo; ersetzbar</p>
+</li>
+<li>
+<p>Öffen Sie die Site<a href="https://themes.gohugo.io/hugo-theme/">theme.gohugo.io</a> um themes zu finden</p>
+</li>
+<li>
+<p><code>cd myblog</code>
+<em><strong>in path</strong></em></p>
+</li>
+<li>
+<p>Zum Beispiel：<code>git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c</code>
+<em><strong>Laden Sie das m10c-Thema in das &ldquo;Themen&rdquo; Ordner herunter</strong></em></p>
+</li>
+<li>
+<p><code>hugo server -t m10c --buildDrafts</code>
+<em><strong>Starten Sie den  lokale Server</strong></em>
+Suchen Sie die localhost-Adresse im Terminal. Sie können überprüfen, ob die lokale Webseite erfolgreich geöffnet wurde</p>
+</li>
+<li>
+<p>Doku schreiben：<code>hugo new post/blog.md</code> Erstellen Sie das erste Markdown-Dokument(Markdown_form empfehlen)</p>
+</li>
+<li>
+<p>Erstellen Sie ein Repository auf dem Remote-Github</p>
+</li>
+<li>
+<p><code>hugo --theme=m10c --baseUrl=&quot;http://XXXXXXX.github.io/&quot; --buildDrafts</code>
+<em><strong>Generieren Sie automatisch die Dateien, wenn diese mit Remotesadressen verknüpft sind</strong></em></p>
+</li>
+</ul>
+<pre><code>cd public/  
+git init //Initialisieren Sie den &quot;public&quot; Ordner, um daraus ein Git-Paket zu machen
+git add .
+git commit -m&quot;my hugo first blog&quot;
+git remote add origin http://github.com/xxxxxxx/xxxxxxx.github.io.git
+git push -u origin master //first time
+</code></pre><p>-Seite aktualisieren</p>
+<pre><code>cd myblog
+hugo 
+cd public
+git add .
+git status
+git commit -m &quot;add blog post&quot;
+git push
+
+</code></pre><h3 id="noch-etwas-problem-kannst-du-es-nicht-schaffen">noch etwas Problem? Kannst du es nicht schaffen?</h3>
+<p>Kontakt Email ： <a href="mailto:dingsiyu0107@gmail.com">dingsiyu0107@gmail.com</a></p>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      <li>None</li>
+    </ul>
+  
+  
+    <ul class="tags">
+      <li>None</li>
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    
+    <div>
+      <h2 id="say-something">Say Something</h2>
+        <form id="comment-form" class="new-comment" method="POST">
+          
+          <h3 class='reply-notice hidden'>
+            <span class='reply-name'></span>
+          </h3>
+
+          
+          <input type="hidden" name="options[entryId]" value="d68f7352c5aad44753e043a5a1678acd">
+          <input type='hidden' name='fields[replyThread]' value=''>
+          <input type='hidden' name='fields[replyID]' value=''>
+          <input type='hidden' name='fields[replyName]' value=''>
+
+          
+          <input required name='fields[name]' type='text' placeholder='Your Name'>
+          <input name='fields[website]' type='text' placeholder='Your Website'>
+          <input required name='fields[email]' type='email' placeholder='Your Email'>
+          <textarea required name='fields[body]' placeholder='Your Message' rows='10'></textarea>
+
+          
+          
+
+          
+          <div class='submit-notice'>
+            <strong class='submit-notice-text submit-success hidden'>Thanks for your comment! It will be shown on the site once it has been approved.</strong>
+            <strong class='submit-notice-text submit-failed hidden'>Sorry, there was an error with your submission. Please make sure all required fields have been completed and try again.</strong>
+          </div>
+
+          
+          <input type='submit' value='Submit' class='button'>
+          <input type='submit' value='Submitted' class='hidden button' disabled>
+          <input type='reset' value='Reset' class='button'>
+        </form>
+    </div>
+
+    
+    <div>
+      <h2>Comments</h2>
+    </div>
+  </article>
+
+
+  
+  <div class="pagination">
+    
+    
+      <a href="seeyouding0108.github.io/post/blog2/" class="button right"><span>Markdown</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="seeyouding0108.github.io/post/blog3/">Hugo Website erstellen</a></h2>
+          <time class="published" datetime="2020-10-09 12:38:06 &#43;0200 CEST">October 9, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="seeyouding0108.github.io/post/blog2/">Markdown</a></h2>
+          <time class="published" datetime="2020-10-09 12:38:02 &#43;0200 CEST">October 9, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="seeyouding0108.github.io/post/blog1/">hugo 静态网页创建</a></h2>
+          <time class="published" datetime="2020-10-09 11:07:45 &#43;0200 CEST">October 9, 2020</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/seeyouding0108.github.io/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>This theme was developed for Hugo static site generator.</p>
+      <footer>
+        <a href="/seeyouding0108.github.io/about" class="button">Learn More</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/seeyouding0108/seeyouding0108.github.io" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/example" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+<li><a href="//linkedin.com/company/examplebusiness" target="_blank" rel="noopener" title="LinkedIn Company" class="fab fa-linkedin"></a></li>
+
+
+
+<li><a href="//facebook.com/example" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+<li><a href="//reddit.com/user/example" target="_blank" rel="noopener" title="Reddit" class="fab fa-reddit"></a></li>
+
+
+
+
+
+
+
+<li><a href="//instagram.com/example" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/example" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+<li><a href="//pinterest.com/example" target="_blank" rel="noopener" title="Pinterest" class="fab fa-pinterest-p"></a></li>
+<li><a href="//telegram.me/example" target="_blank" rel="noopener" title="telegram" class="fab fa-telegram"></a></li>
+
+
+
+<li><a href="//researchgate.net/profile/example" target="_blank" rel="noopener" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
+<li><a href="//keybase.io/example" target="_blank" rel="noopener" title="keybase" class="fab fa-keybase"></a></li>
+<li><a href="//example.com/@example" target="_blank" rel="noopener" title="mastodon" class="fab fa-mastodon"></a></li>
+<li><a href="mailto:example" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2020 Siyu&#39;site
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.75.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/seeyouding0108.github.io/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/seeyouding0108.github.io/js/bundle.min.3329ba6007b33a66b19c6d643b5df991a6a4cd43094dfd494a6df1053f7d2141.js" integrity="sha256-Mym6YAezOmaxnG1kO135kaakzUMJTf1JSm3xBT99IUE="></script>
+    <script src="/seeyouding0108.github.io/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Post on Siyu&#39;site</title>
+    <link>seeyouding0108.github.io/post/</link>
+    <description>Recent content in Post on Siyu&#39;site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 09 Oct 2020 12:38:06 +0200</lastBuildDate><atom:link href="seeyouding0108.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Website erstellen</title>
+      <link>seeyouding0108.github.io/post/blog3/</link>
+      <pubDate>Fri, 09 Oct 2020 12:38:06 +0200</pubDate>
+      
+      <guid>seeyouding0108.github.io/post/blog3/</guid>
+      <description>Hugo Website erstellen(Verbereitungsphase) 1）Notwendige Werkzeuge  homebrew （Es ist ein Softwaresverwaltungstool unter Mac OS, mit dem Sie problemlos Softwaretools usw. installieren / deinstallieren können, ähnlich wie Softwaresverwaltungstools wie apt-get unter Linux und npm von node） hugo （Hugo ist ein statischer Website-Generator, der von der Sprache Go geschieben wird. Einfach, benutzerfreundlich, effizient, leicht zu erweitern und schnell bereitzustellen.） git （Versionskontrolle）  2)Installationsmethode homebrew：  eingeben im Terminal /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.</description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>seeyouding0108.github.io/post/blog2/</link>
+      <pubDate>Fri, 09 Oct 2020 12:38:02 +0200</pubDate>
+      
+      <guid>seeyouding0108.github.io/post/blog2/</guid>
+      <description>markdown 基本 1）标题  在想要设置为标题的文字前面加#来表示 一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。  注：标准语法一般在#后跟个空格再写文字，貌似简书不加空格也行。
+示例：
+# 这是一级标题 ## 这是二级标题 ### 这是三级标题 #### 这是四级标题 ##### 这是五级标题 ###### 这是六级标题  2)字体   加粗
+要加粗的文字左右分别用两个*号包起来
+  斜体
+要倾斜的文字左右分别用一个*号包起来，尾部加`
+  斜体加粗
+要倾斜和加粗的文字左右分别用三个*号包起来
+  删除线
+要加删除线的文字左右分别用两个~~号包起来
+  示例：
+**这是加粗的文字** *这是倾斜的文字*` ***这是斜体加粗的文字*** ~~这是加删除线的文字~~ 效果如下：
+ 这是加粗的文字 这是倾斜的文字` 这是斜体加粗的文字 这是加删除线的文字   3) 引用 在引用的文字前加&amp;gt;即可。引用也可以嵌套，如加两个&amp;raquo;三个&amp;raquo;&amp;gt; n个&amp;hellip;
+示例：
+&amp;gt; 引用 &amp;gt;&amp;gt; 引用 效果如下：
+ 引用
+ 引用
+   4）分割线 三个或者三个以上的 -</description>
+    </item>
+    
+    <item>
+      <title>hugo 静态网页创建</title>
+      <link>seeyouding0108.github.io/post/blog1/</link>
+      <pubDate>Fri, 09 Oct 2020 11:07:45 +0200</pubDate>
+      
+      <guid>seeyouding0108.github.io/post/blog1/</guid>
+      <description>hugo 静态网页创建(准备) 1）hugo 必要的工具  homebrew （是一款Mac OS上的软件包管理工具，通过它可以很方便的安装/卸载软件工具等，类似于Linux下的apt-get，node的npm等包管理工具） hugo （Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。） git （版本控制）  2)安装方法 homebrew：  terminal输入 /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install 自动完成安装  hogo 利用braw：  brew install hugo  git：  brew install git   hugo 网页创建   hugo new site myblog生成站点 myblog 可替换
+  打开网页theme.gohugo.io找主题
+  cd myblog进入path
+  例如：git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c在themes目录下下载m10c主题
+  hugo server -t m10c --buildDrafts本地启动服务器 在terminal中找到localhost地址，可检查网页是否本地成功打开
+  写文档：hugo new post/blog.</description>
+    </item>
+    
+  </channel>
+</rss>
