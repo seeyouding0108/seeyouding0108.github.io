@@ -2,24 +2,36 @@
     "title": "Contact_me",
     "date": "",
     "description": "",
+    "body": "Email：dingsiyu0107@gmail.com ",
+    "ref": "/contact/"
+  },{
+    "title": "Class",
+    "date": "",
+    "description": "",
     "body": "",
-    "ref": "seeyouding0108.github.io/contact/contact_me/"
+    "ref": "/categories/"
+  },{
+    "title": "About_me",
+    "date": "",
+    "description": "",
+    "body": "Hi ！ it\u0026rsquo;s me Ding Nice to see you！ ，I am a mechanical student studying in Leibniz University Hannover Germany. Love coding just like you. If you got any question about my blogs , just contact me in (Chinese;Deutsch;English) : dingsiyu0107@gmail.com ",
+    "ref": "/about/"
   },{
     "title": "Hugo Website erstellen",
     "date": "",
     "description": "",
     "body": "Hugo Website erstellen(Verbereitungsphase) 1）Notwendige Werkzeuge  homebrew （Es ist ein Softwaresverwaltungstool unter Mac OS, mit dem Sie problemlos Softwaretools usw. installieren / deinstallieren können, ähnlich wie Softwaresverwaltungstools wie apt-get unter Linux und npm von node） hugo （Hugo ist ein statischer Website-Generator, der von der Sprache Go geschieben wird. Einfach, benutzerfreundlich, effizient, leicht zu erweitern und schnell bereitzustellen.） git （Versionskontrolle）  2)Installationsmethode homebrew：  eingeben im Terminal /usr/bin/ruby -e \u0026quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install Automatisch installieren  hogo  brew install hugo  git：  brew install git   Hugo Wesite erstellen(Prozess)   hugo new site myblog Site generieren \u0026ldquo;myblog\u0026rdquo; ersetzbar\n  Öffen Sie die Sitetheme.gohugo.io um themes zu finden\n  cd myblog in path\n  Zum Beispiel：git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c Laden Sie das m10c-Thema in das \u0026ldquo;Themen\u0026rdquo; Ordner herunter\n  hugo server -t m10c --buildDrafts Starten Sie den lokale Server Suchen Sie die localhost-Adresse im Terminal. Sie können überprüfen, ob die lokale Webseite erfolgreich geöffnet wurde\n  Doku schreiben：hugo new post/blog.md Erstellen Sie das erste Markdown-Dokument(Markdown_form empfehlen)\n  Erstellen Sie ein Repository auf dem Remote-Github\n  hugo --theme=m10c --baseUrl=\u0026quot;http://XXXXXXX.github.io/\u0026quot; --buildDrafts Generieren Sie automatisch die Dateien, wenn diese mit Remotesadressen verknüpft sind\n  cd public/ git init //Initialisieren Sie den \u0026quot;public\u0026quot; Ordner, um daraus ein Git-Paket zu machen git add . git commit -m\u0026quot;my hugo first blog\u0026quot; git remote add origin http://github.com/xxxxxxx/xxxxxxx.github.io.git git push -u origin master //first time -Seite aktualisieren\ncd myblog hugo cd public git add . git status git commit -m \u0026quot;add blog post\u0026quot; git push noch etwas Problem? Kannst du es nicht schaffen? Kontakt Email ： dingsiyu0107@gmail.com\n",
-    "ref": "seeyouding0108.github.io/post/blog3/"
+    "ref": "/post/blog3/"
   },{
     "title": "Markdown",
     "date": "",
     "description": "",
     "body": "markdown 基本 1）标题  在想要设置为标题的文字前面加#来表示 一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。  注：标准语法一般在#后跟个空格再写文字，貌似简书不加空格也行。\n示例：\n# 这是一级标题 ## 这是二级标题 ### 这是三级标题 #### 这是四级标题 ##### 这是五级标题 ###### 这是六级标题  2)字体   加粗\n要加粗的文字左右分别用两个*号包起来\n  斜体\n要倾斜的文字左右分别用一个*号包起来，尾部加`\n  斜体加粗\n要倾斜和加粗的文字左右分别用三个*号包起来\n  删除线\n要加删除线的文字左右分别用两个~~号包起来\n  示例：\n**这是加粗的文字** *这是倾斜的文字*` ***这是斜体加粗的文字*** ~~这是加删除线的文字~~ 效果如下：\n 这是加粗的文字 这是倾斜的文字` 这是斜体加粗的文字 这是加删除线的文字   3) 引用 在引用的文字前加\u0026gt;即可。引用也可以嵌套，如加两个\u0026raquo;三个\u0026raquo;\u0026gt; n个\u0026hellip;\n示例：\n\u0026gt; 引用 \u0026gt;\u0026gt; 引用 效果如下：\n 引用\n 引用\n   4）分割线 三个或者三个以上的 -\n示例：\n--- ------- 效果如下：   5) 图片 语法：\n![图片下方解释](图片地址“图片title”) 示例： 利用ms图床\n 6) 超链接  [链接名](链接地址) 示例：\ngoogle\n 7) 列表 无序列表\n- liebiao + liebiao * liebiao 示例：\n liebiao   liebiao   liebiao  多用 -\n有序列表\n1. liebiao 2. liebiao 示例：\n liebiao liebiao  列表嵌套 上下级之间敲三个空格\n 8）表格 语法\n 表头|表头|表头 ---|:--:|---: 内容|内容|内容 内容|内容|内容 示例：\n   姓名 专业 年龄     小丁 mb 18   小成 bwl 18   小张 economic 18   小刘 et 18   大蒋 et 18     9）代码 语法 打点 daima\ndaima  嘿嘿嘿 没了\n",
-    "ref": "seeyouding0108.github.io/post/blog2/"
+    "ref": "/post/blog2/"
   },{
     "title": "hugo 静态网页创建",
     "date": "",
     "description": "",
     "body": "hugo 静态网页创建(准备) 1）hugo 必要的工具  homebrew （是一款Mac OS上的软件包管理工具，通过它可以很方便的安装/卸载软件工具等，类似于Linux下的apt-get，node的npm等包管理工具） hugo （Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。） git （版本控制）  2)安装方法 homebrew：  terminal输入 /usr/bin/ruby -e \u0026quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install 自动完成安装  hogo 利用braw：  brew install hugo  git：  brew install git   hugo 网页创建   hugo new site myblog生成站点 myblog 可替换\n  打开网页theme.gohugo.io找主题\n  cd myblog进入path\n  例如：git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c在themes目录下下载m10c主题\n  hugo server -t m10c --buildDrafts本地启动服务器 在terminal中找到localhost地址，可检查网页是否本地成功打开\n  写文档：hugo new post/blog.md创建第一个markdown文档\n  在远端github 创建repository\n  hugo --theme=m10c --baseUrl=\u0026quot;http://XXXXXXX.github.io/\u0026quot; --buildDrafts 关联远端地址自动生成public文件\n   cd public/ git init //初始化public文件夹使之成为git包 git add . git commit -m\u0026quot;my hugo first blog\u0026quot; git remote add origin http://github.com/xxxxxxx/xxxxxxx.github.io.git git push -u origin master //first time  -更新页面\ncd myblog hugo cd public git add . git status git commit -m \u0026quot;add blog post\u0026quot; git push 有问题？ 搞不成？ 问我！ Email ： dingsiyu0107@gmail.com\n",
-    "ref": "seeyouding0108.github.io/post/blog1/"
+    "ref": "/post/blog1/"
   }]
