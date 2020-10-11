@@ -1,4 +1,10 @@
 [{
+    "title": "Linux experimental environment in multi-node",
+    "date": "",
+    "description": "",
+    "body": "Linux experimental environment in multi-node  ifconfig kontrolieren die IP-Adresse des Hosts und Linux Pingen Sie die Adressen beider Parteien an, um festzustellen, ob sie kommunizieren können Netzwerkeinstellungen der virtuellen Maschine wlan Legen Sie die statische IP für die virtuelle Maschine fest  su root, um Root-Rechte einzugeben dhclient legt zu diesem Zeitpunkt eine verfügbare IP-Adresse ein statistische IP statt dynamische IP fest. Um sicherzustellen, dass sie sich nicht ändert, muss sie auf der Netzwerkkarte konfiguriert werden vim / etc / sysconfig / network- scripts / ifcfg-ens33 bootproto = ~~ dhcp ~~ static onboot = ~~ no ~~ yes Add static ip-\u0026gt;  IPADDR = 192.168.40.128 NETMASK = 255.255.255.0 GATEWAY = 192.168.178.1 DNS1 = 119,29,29,29 -: wp speichern und beenden   Starten Sie die Netzwerkkarte systemctl neu. systemctl restart network.service   SecureCRT-Verbindungstest Dateiübertragung übertragen  linux 实验环境及其网络配置  ifconfig 看宿主机和linux的ip地址 ping 双方地址看是否可通 虚拟机网络设置 wlan 给虚拟机设置静态ip  su root 进入root 权限 dhclient 设置一个网络类可用ip地址,此时为动态ip，为了保证不变化，需要配置到网卡 vim /etc/sysconfig/network- scripts/ifcfg-ens33 bootproto = dhcp static onboot = no yes 添加静态ip-\u0026gt; IPADDR = 192.168.40.128  NETMASK=255.255.255.0 GATEWAY=192.168.178.1 DNS1=119.29.29.29 :wp保存退出   重启网卡 systemctl restart network.service   SecureCRT 连接测试 transmit 文件互传  ",
+    "ref": "/post/blog4/"
+  },{
     "title": "Contact_me",
     "date": "",
     "description": "",

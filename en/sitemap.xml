@@ -3,33 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://seeyouding0108.github.io/contact/</loc>
-    <lastmod>2020-10-09T13:17:42+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://seeyouding0108.github.io/categories/</loc>
-    <lastmod>2020-10-09T13:17:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://seeyouding0108.github.io/about/</loc>
-    <lastmod>2020-10-09T13:16:51+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://seeyouding0108.github.io/post/blog3/</loc>
-    <lastmod>2020-10-09T12:38:06+02:00</lastmod>
+    <loc>https://seeyouding0108.github.io/post/blog4/</loc>
+    <lastmod>2020-10-11T22:03:28+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://seeyouding0108.github.io/post/</loc>
-    <lastmod>2020-10-09T12:38:06+02:00</lastmod>
+    <lastmod>2020-10-11T22:03:28+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://seeyouding0108.github.io/</loc>
-    <lastmod>2020-10-09T12:38:06+02:00</lastmod>
+    <lastmod>2020-10-11T22:03:28+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -80,6 +65,26 @@
                 hreflang="en"
                 href="https://seeyouding0108.github.io/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://seeyouding0108.github.io/contact/</loc>
+    <lastmod>2020-10-09T13:17:42+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seeyouding0108.github.io/categories/</loc>
+    <lastmod>2020-10-09T13:17:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seeyouding0108.github.io/about/</loc>
+    <lastmod>2020-10-09T13:16:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://seeyouding0108.github.io/post/blog3/</loc>
+    <lastmod>2020-10-09T12:38:06+02:00</lastmod>
   </url>
   
   <url>

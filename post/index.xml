@@ -6,7 +6,16 @@
     <description>Recent content in Post on Siyu&#39;site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Oct 2020 12:38:06 +0200</lastBuildDate><atom:link href="https://seeyouding0108.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Oct 2020 22:03:28 +0200</lastBuildDate><atom:link href="https://seeyouding0108.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux experimental environment in multi-node</title>
+      <link>https://seeyouding0108.github.io/post/blog4/</link>
+      <pubDate>Sun, 11 Oct 2020 22:03:28 +0200</pubDate>
+      
+      <guid>https://seeyouding0108.github.io/post/blog4/</guid>
+      <description>Linux experimental environment in multi-node  ifconfig kontrolieren die IP-Adresse des Hosts und Linux Pingen Sie die Adressen beider Parteien an, um festzustellen, ob sie kommunizieren können Netzwerkeinstellungen der virtuellen Maschine wlan Legen Sie die statische IP für die virtuelle Maschine fest  su root, um Root-Rechte einzugeben dhclient legt zu diesem Zeitpunkt eine verfügbare IP-Adresse ein statistische IP statt dynamische IP fest. Um sicherzustellen, dass sie sich nicht ändert, muss sie auf der Netzwerkkarte konfiguriert werden vim / etc / sysconfig / network- scripts / ifcfg-ens33 bootproto = ~~ dhcp ~~ static onboot = ~~ no ~~ yes Add static ip-&amp;gt;  IPADDR = 192.</description>
+    </item>
+    
     <item>
       <title>Hugo Website erstellen</title>
       <link>https://seeyouding0108.github.io/post/blog3/</link>
