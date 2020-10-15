@@ -13,8 +13,10 @@
       <pubDate>Thu, 15 Oct 2020 15:25:16 +0200</pubDate>
       
       <guid>https://seeyouding0108.github.io/post/blog5/</guid>
-      <description>SSH verbinden (Deutsch/中文 ) -Wenn eine Remote-Anmeldung zulässig ist, können Sie sich mit Secure Shell (SSH) oder SecureCRT, Transmit von einem anderen Computer aus bei Ihrem Mac anmelden.
-Sie können Telnet nicht verwenden, um sich bei Ihrem Mac anzumelden. Richten Sie die Remote-Anmeldung auf dem Mac ein Vorbereitung: Das Mac-Betriebssystem erkennt, ob SSH aktiviert ist `` ` Erkennungsbefehl: sudo systemsetup -getremotelogin Aktivieren Sie den Befehl: sudo systemsetup -setremotelogin on Schalten Sie den Befehl aus: sudo systemsetup -setremotelogin off</description>
+      <description>SSH verbinden (Deutsch/中文 )   Wenn eine Remote-Anmeldung zulässig ist, können Sie sich mit Secure Shell (SSH) oder SecureCRT, Transmit von einem anderen Computer aus bei Ihrem Mac anmelden.
+  Sie können Telnet nicht verwenden, um sich bei Ihrem Mac anzumelden.
+   Richten Sie die Remote-Anmeldung auf dem Mac ein - Vorbereitung: Das Mac-Betriebssystem erkennt, ob SSH aktiviert ist
+Erkennungsbefehl: sudo systemsetup -getremotelogin Aktivieren Sie den Befehl: sudo systemsetup -setremotelogin on Schalten Sie den Befehl aus: sudo systemsetup -setremotelogin off Überprüfen Sie, ob ssh aktiviert ist Wenn Sie Vollzugriffsberechtigungen benötigen, gehen Sie zu &amp;ldquo;Sicherheit&amp;rdquo; -&amp;gt; &amp;ldquo;Datenschutz&amp;rdquo;</description>
     </item>
     
     <item>
