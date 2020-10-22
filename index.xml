@@ -6,7 +6,17 @@
     <description>Recent content on Siyu&#39;site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Oct 2020 15:25:16 +0200</lastBuildDate><atom:link href="https://seeyouding0108.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 20:28:09 +0200</lastBuildDate><atom:link href="https://seeyouding0108.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multithreading --&gt; Thread and Runnable</title>
+      <link>https://seeyouding0108.github.io/post/blog6/</link>
+      <pubDate>Thu, 22 Oct 2020 20:28:09 +0200</pubDate>
+      
+      <guid>https://seeyouding0108.github.io/post/blog6/</guid>
+      <description>Multithreading &amp;ndash;&amp;gt; Thread and Runnable(Deutsch/中文) （Deutsch）Der Unterschied und die Verwendung von Thread und Runnable Weil es in einigen Büchern und Tutorials so beschrieben wird: Runnable ist einfacher, die gemeinsame Nutzung von Ressourcen zwischen mehreren Threads zu realisieren, Thread kann dies jedoch nicht! Dies ist jedoch nicht der Fall, es gibt fast keinen wesentlichen Unterschied zwischen den beiden.
+Der Unterschiede:  Runnable wird durch Implementierung seiner Interface implementiert Thread wird implementiert, indem seine Klasse geerbt wird Die ausführbare Interface unterstützt die Mehrfachvererbung Thread implementiert die Runnable-Interface und wurde erweitert.</description>
+    </item>
+    
     <item>
       <title>SSH verbinden(Deutsch/中文 )</title>
       <link>https://seeyouding0108.github.io/post/blog5/</link>

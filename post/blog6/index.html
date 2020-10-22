@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Multithreading --&gt; Thread and Runnable - Siyu&#39;site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.75.1" /><meta itemprop="name" content="Multithreading --&gt; Thread and Runnable">
+<meta itemprop="description" content="Multithreading &ndash;&gt; Thread and Runnable(Deutsch/中文) （Deutsch）Der Unterschied und die Verwendung von Thread und Runnable Weil es in einigen Büchern und Tutorials so beschrieben wird: Runnable ist einfacher, die gemeinsame Nutzung von Ressourcen zwischen mehreren Threads zu realisieren, Thread kann dies jedoch nicht! Dies ist jedoch nicht der Fall, es gibt fast keinen wesentlichen Unterschied zwischen den beiden.
+Der Unterschiede:  Runnable wird durch Implementierung seiner Interface implementiert Thread wird implementiert, indem seine Klasse geerbt wird Die ausführbare Interface unterstützt die Mehrfachvererbung Thread implementiert die Runnable-Interface und wurde erweitert.">
+<meta itemprop="datePublished" content="2020-10-22T20:28:09+02:00" />
+<meta itemprop="dateModified" content="2020-10-22T20:28:09+02:00" />
+<meta itemprop="wordCount" content="809">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta property="og:title" content="Multithreading --&gt; Thread and Runnable" />
+<meta property="og:description" content="Multithreading &ndash;&gt; Thread and Runnable(Deutsch/中文) （Deutsch）Der Unterschied und die Verwendung von Thread und Runnable Weil es in einigen Büchern und Tutorials so beschrieben wird: Runnable ist einfacher, die gemeinsame Nutzung von Ressourcen zwischen mehreren Threads zu realisieren, Thread kann dies jedoch nicht! Dies ist jedoch nicht der Fall, es gibt fast keinen wesentlichen Unterschied zwischen den beiden.
+Der Unterschiede:  Runnable wird durch Implementierung seiner Interface implementiert Thread wird implementiert, indem seine Klasse geerbt wird Die ausführbare Interface unterstützt die Mehrfachvererbung Thread implementiert die Runnable-Interface und wurde erweitert." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://seeyouding0108.github.io/post/blog6/" />
+<meta property="article:published_time" content="2020-10-22T20:28:09+02:00" />
+<meta property="article:modified_time" content="2020-10-22T20:28:09+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Multithreading --&gt; Thread and Runnable"/>
+<meta name="twitter:description" content="Multithreading &ndash;&gt; Thread and Runnable(Deutsch/中文) （Deutsch）Der Unterschied und die Verwendung von Thread und Runnable Weil es in einigen Büchern und Tutorials so beschrieben wird: Runnable ist einfacher, die gemeinsame Nutzung von Ressourcen zwischen mehreren Threads zu realisieren, Thread kann dies jedoch nicht! Dies ist jedoch nicht der Fall, es gibt fast keinen wesentlichen Unterschied zwischen den beiden.
+Der Unterschiede:  Runnable wird durch Implementierung seiner Interface implementiert Thread wird implementiert, indem seine Klasse geerbt wird Die ausführbare Interface unterstützt die Mehrfachvererbung Thread implementiert die Runnable-Interface und wurde erweitert."/>
+<meta name="twitter:site" content="@example"/>
+<link rel="stylesheet" href="/css/bundle.min.60afbbb71415f27074dc868c3534aff22629b155ec895278a17ecedb2b9a77bf.css" integrity="sha256-YK&#43;7txQV8nB03IaMNTSv8iYpsVXsiVJ4oX7O2yuad78="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Multithreading --&gt; Thread and Runnable
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/post/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/post/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+    
+      
+        <a href="/pt" lang="pt" class="nav no-lang link">Português (pt)</a>
+      
+    
+      
+    
+      
+        <a href="/fr" lang="fr" class="nav no-lang link">Français (fr)</a>
+      
+    
+      
+        <a href="/pl" lang="pl" class="nav no-lang link">Polski (pl)</a>
+      
+    
+      
+        <a href="/de" lang="de" class="nav no-lang link">Deutsche (de)</a>
+      
+    
+      
+        <a href="/es" lang="es" class="nav no-lang link">Española (es)</a>
+      
+    
+      
+        <a href="/zh-cn" lang="zh-cn" class="nav no-lang link">中文 (zh-cn)</a>
+      
+    
+      
+        <a href="/zh-tw" lang="zh-tw" class="nav no-lang link">中文 (zh-tw)</a>
+      
+    
+      
+        <a href="/ja" lang="ja" class="nav no-lang link">日本語 (ja)</a>
+      
+    
+      
+        <a href="/nl" lang="nl" class="nav no-lang link">Nederlands (nl)</a>
+      
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Multithreading%20--%3e%20Thread%20and%20Runnable&amp;url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f&amp;title=Multithreading%20--%3e%20Thread%20and%20Runnable" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f&amp;title=Multithreading%20--%3e%20Thread%20and%20Runnable" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f&amp;description=Multithreading%20--%3e%20Thread%20and%20Runnable" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://i.loli.net/2020/10/05/qoPXw3tTHBiAKbe.jpg" class="circle" width="100" alt="Hugo Future Imperfect Slim" /></a>
+  <header>
+    <h1>Siyu</h1>
+  </header>
+  <main>
+    <p>My Blog by <a href='http://html5up.net'>HTML5 UP</a>.</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/seeyouding0108/seeyouding0108.github.io" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/example" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+<li><a href="//linkedin.com/company/examplebusiness" target="_blank" rel="noopener" title="LinkedIn Company" class="fab fa-linkedin"></a></li>
+
+
+
+<li><a href="//facebook.com/example" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+<li><a href="//reddit.com/user/example" target="_blank" rel="noopener" title="Reddit" class="fab fa-reddit"></a></li>
+
+
+
+
+
+
+
+<li><a href="//instagram.com/example" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/example" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+<li><a href="//pinterest.com/example" target="_blank" rel="noopener" title="Pinterest" class="fab fa-pinterest-p"></a></li>
+<li><a href="//telegram.me/example" target="_blank" rel="noopener" title="telegram" class="fab fa-telegram"></a></li>
+
+
+
+<li><a href="//researchgate.net/profile/example" target="_blank" rel="noopener" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
+<li><a href="//keybase.io/example" target="_blank" rel="noopener" title="keybase" class="fab fa-keybase"></a></li>
+<li><a href="//example.com/@example" target="_blank" rel="noopener" title="mastodon" class="fab fa-mastodon"></a></li>
+<li><a href="mailto:dingsiyu0107@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/post/blog6/">Multithreading --&gt; Thread and Runnable</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-10-22 20:28:09 &#43;0200 CEST">October 22, 2020</time>
+    
+    <p>4-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Multithreading%20--%3e%20Thread%20and%20Runnable&amp;url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f&amp;title=Multithreading%20--%3e%20Thread%20and%20Runnable" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f&amp;title=Multithreading%20--%3e%20Thread%20and%20Runnable" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f&amp;description=Multithreading%20--%3e%20Thread%20and%20Runnable" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog6%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      
+      <h1 id="multithreading----thread-and-runnabledeutsch中文">Multithreading &ndash;&gt; Thread and Runnable(Deutsch/中文)</h1>
+<h2 id="deutschder-unterschied-und-die-verwendung-von-thread-und-runnable">（Deutsch）Der Unterschied und die Verwendung von Thread und Runnable</h2>
+<p>Weil es in einigen Büchern und Tutorials so beschrieben wird: Runnable ist einfacher, die gemeinsame Nutzung von Ressourcen zwischen mehreren Threads zu realisieren, Thread kann dies jedoch nicht! Dies ist jedoch nicht der Fall, es gibt fast keinen wesentlichen Unterschied zwischen den beiden.</p>
+<h3 id="der-unterschiede">Der Unterschiede:</h3>
+<ol>
+<li>Runnable wird durch Implementierung seiner Interface implementiert</li>
+<li>Thread wird implementiert, indem seine Klasse geerbt wird</li>
+<li>Die ausführbare Interface unterstützt die Mehrfachvererbung</li>
+<li>Thread implementiert die Runnable-Interface und wurde erweitert. Das Thread implementiert Runnable , sodass Runnable und Thread selbst *** nicht vergleichbar *** sind.
+-Der folgende Thread-Quellcode erklärt:</li>
+</ol>
+<pre><code>public class Thread implements Runnable {
+    /* Make sure registerNatives is the first thing &lt;clinit&gt; does. */
+    private static native void registerNatives();
+    static {
+        registerNatives();
+    }
+
+    private volatile String name;
+    private int priority;
+
+    /* Whether or not the thread is a daemon thread. */
+    private boolean daemon = false;
+
+    /* Interrupt state of the thread - read/written directly by JVM */
+
+</code></pre><h3 id="verwendung">Verwendung</h3>
+<ol>
+<li><em><strong>Thread</strong></em>:
+<ol>
+<li>Erstellen Sie eine Klasse, die Thread erbt</li>
+<li>@Override run () -Methode</li>
+<li>Erstellen Sie eine Instanz dieser Klasse in der Testklasse</li>
+<li>Verwenden Sie die start () -Methode direkt für dieses Objekt, das die run () -Methode tatsächlich ausführt.
+Dies ist jedoch nur ein einziger Thread für Mitgliedsvariablen (Ressourcen), wenn Sie Ressourcen gemeinsam nutzen möchten.
+Sie müssen das Instanzobjekt als Parameter in die Thread-Konstruktionsmethode einfügen, um den Parameter zu übergeben und ein echtes Multithreading zu erzielen.</li>
+</ol>
+</li>
+</ol>
+<pre><code>public class Ticket extends Thread{
+    private int ticket = 100;
+       @Override
+    public void run() {
+        while (true) {
+            if (ticket &gt; 0) {
+                System.out.println(Thread.currentThread().getName() + &quot;numberSellingTicketNumber:&quot; + ticket );
+                ticket--;
+            } else break;
+        }
+    }
+}
+
+ 
+</code></pre><pre><code>public class ThreadSafeDemo {
+    public static void main(String[] args) {
+        Ticket t = new Ticket();
+        t.start(); 
+        
+    }
+}
+</code></pre><p>Viele Tutorials und Bücher werden wie oben beschrieben, dies ist jedoch nur ein einziger Thread für Mitgliedsvariablen (Ressourcen). Wenn Sie Ressourcen(den Code) nutzen möchten</p>
+<pre><code>privates int Ticket = 100;
+</code></pre><p>Sie müssen den Objekt nur als Parameter an das folgende Thread-Konstruktionsmethode übergeben, um ein echtes Multithreading zu erzielen.</p>
+<pre><code>Ticket t1 = new Ticket();
+Thread th1 = new Thread(t1,&quot;thread1&quot;);
+Thread th2 = new Thread(t1,&quot;thread2&quot;);
+th1.start()
+th2.start()
+</code></pre><p>Da die Thread-Klasse vererbt wird, handelt es sich immer noch um eine Einzelvererbung, und eine Mehrfachvererbung kann nicht realisiert werden.
+Zur Optimierung können Sie die zweite Methode verwenden: Interface implementieren Runnable, um die Vererbung mehrerer Interface zu implementieren.</p>
+<ol start="2">
+<li>
+<p><em><strong>Runnable</strong></em></p>
+<ol>
+<li>Erstellen Sie eine Klasse zum Implementieren der Runnable-Klasse (diese Klasse ist tatsächlich dieselbe wie die Thread-Klasse, beide sind Implementierungsklassen von Runnable, sodass Sie später direkt die Thread-Konstruktionsmethode Thread (Runnable r) verwenden können</li>
+<li>@Override run () -Methode</li>
+<li>Erstellen Sie gerade eine Objekt der Klasse in der Testklasse</li>
+<li>Verwenden Sie die Thread-Konstruktionsmethode, um das Instanzobjekt zu übergeben</li>
+<li>Verwenden Sie die Start()methode</li>
+</ol>
+</li>
+</ol>
+<pre><code>public class SynchronizedLock implements Runnable {
+    private int ticket = 100;
+    //Object obj = new Object();
+
+
+    @Override
+    public void run() {
+        while (true) {
+            
+            synchronized (this) {
+                if (ticket &gt; 0) {
+                    System.out.println(Thread.currentThread().getName() + &quot;numberSellingTicketNumber:&quot; + ticket );
+                    ticket--;
+                } else break;
+            }
+        }
+    }
+}
+</code></pre><pre><code>
+public class ThreadSynchronized {
+    public static void main(String[] args) {
+
+        SynchronizedLock syn = new SynchronizedLock();
+
+            Thread syn1 = new Thread(syn);
+            Thread syn2 = new Thread(syn);
+            Thread syn3 = new Thread(syn);
+
+            syn1.start();
+            syn2.start();
+            syn3.start();
+        }
+    }
+
+</code></pre><hr>
+<h2 id="中文thread-和-runnable的区别和用法">(中文)Thread 和 Runnable的区别和用法</h2>
+<p>因为在某些书上和教程中是这样描述的：Runnable更容易可以实现多个线程间的资源共享，而Thread不可以！但事实上并不是如此，两者没有本质区别。</p>
+<h3 id="区别">区别：</h3>
+<ol>
+<li>Runnable的实现方式是实现其接口即可</li>
+<li>Thread的实现方式是继承其类</li>
+<li>Runnable接口支持多继承</li>
+<li>Thread实现了Runnable接口并进行了扩展，而Thread和Runnable的实质是实现的关系，不是同类东西，所以Runnable或Thread本身 <em><strong>没有可比性</strong></em>。
+<ul>
+<li>以下Thread的源代码解释了：Thread和Runnable的实质是实现的关系</li>
+</ul>
+</li>
+</ol>
+<pre><code>
+public class Thread implements Runnable {
+    /* Make sure registerNatives is the first thing &lt;clinit&gt; does. */
+    private static native void registerNatives();
+    static {
+        registerNatives();
+    }
+
+    private volatile String name;
+    private int priority;
+
+    /* Whether or not the thread is a daemon thread. */
+    private boolean daemon = false;
+
+    /* Interrupt state of the thread - read/written directly by JVM */
+
+</code></pre><h3 id="用法">用法</h3>
+<ol>
+<li><em><strong>Thread</strong></em>:
+<ol>
+<li>创建一个类继承Thread</li>
+<li>@Override run()方法</li>
+<li>在测试类中创建这个类的实例对象</li>
+<li>对这个对象直接使用start()方法，实际上是执行了run()方法，
+但是这样只是对成员变量（资源）设置了单线程，如果想资源共享，
+需要把实例对象作为参数放入 Thread构造方法中传参，以实现真正的多线程。</li>
+</ol>
+</li>
+</ol>
+<pre><code>public class Ticket extends Thread{
+    private int ticket = 100;
+       @Override
+    public void run() {
+        while (true) {
+            if (ticket &gt; 0) {
+                System.out.println(Thread.currentThread().getName() + &quot;号窗口在卖第&quot; + ticket + &quot;张票&quot;);
+                ticket--;
+            } else break;
+        }
+    }
+}
+
+ 
+</code></pre><pre><code>public class ThreadSafeDemo {
+    public static void main(String[] args) {
+        Ticket t = new Ticket();//只创建了一个实现类对象
+        t.start(); //直接调用start()方法，实际上是调用了run()方法
+        
+    }
+}
+</code></pre><p>许多教程和书上都是像上面这样这样描述的，但这只是对成员变量（资源）设置了单线程，如果想资源共享,也就是代码中的</p>
+<pre><code>private int ticket = 100;
+</code></pre><p>，只需要向如下把实例对象作为参数放入 Thread <em><strong>构造方法</strong></em> 中传参，以实现真正的多线程。</p>
+<pre><code>Ticket t1 = new Ticket();
+Thread th1 = new Thread(t1,&quot;thread1&quot;);
+Thread th2 = new Thread(t1,&quot;thread2&quot;);
+th1.start()
+th2.start()
+</code></pre><p>由于用的是继承Thread类，导致还是单继承，无法实现多继承。
+为了优化，可以用第二种发方法：实现interface Runnable 来实现多接口继承
+2. <em><strong>Runnable</strong></em>
+1. 创建一个类实现Runnable类(这个类实际上和Thread类一样，两者都是Runnable的实现类，所以后面可以直接使用Thread的构造方法Thread(Runnable r)
+2. @Override run()方法
+3. 在测试类中创建刚刚的类的实例对象
+4. 使用Thread构造方法，将实例对象传入
+5. 使用start方法</p>
+<pre><code>public class SynchronizedLock implements Runnable {
+    private int ticket = 100;
+    //Object obj = new Object();
+
+
+    @Override
+    public void run() {
+        while (true) {
+            //以下是访问了 共享数据 的代码
+            //用同步代码块的方式同步代码，不出现重复和错误！！
+            synchronized (this) {
+                if (ticket &gt; 0) {
+                    System.out.println(Thread.currentThread().getName() + &quot;号窗口在卖第&quot; + ticket + &quot;张票&quot;);
+                    ticket--;
+                } else break;
+            }
+        }
+    }
+}
+</code></pre><pre><code>
+public class ThreadSynchronized {
+    public static void main(String[] args) {
+
+        SynchronizedLock syn = new SynchronizedLock();
+
+            Thread syn1 = new Thread(syn);
+            Thread syn2 = new Thread(syn);
+            Thread syn3 = new Thread(syn);
+
+            syn1.start();
+            syn2.start();
+            syn3.start();
+        }
+    }
+
+</code></pre>
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      <li>None</li>
+    </ul>
+  
+  
+    <ul class="tags">
+      <li>None</li>
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+  <article class="post">
+    
+    <div>
+      <h2 id="say-something">Say Something</h2>
+        <form id="comment-form" class="new-comment" method="POST">
+          
+          <h3 class='reply-notice hidden'>
+            <span class='reply-name'></span>
+          </h3>
+
+          
+          <input type="hidden" name="options[entryId]" value="5d367decefedd399b8a92fea5aba5282">
+          <input type='hidden' name='fields[replyThread]' value=''>
+          <input type='hidden' name='fields[replyID]' value=''>
+          <input type='hidden' name='fields[replyName]' value=''>
+
+          
+          <input required name='fields[name]' type='text' placeholder='Your Name'>
+          <input name='fields[website]' type='text' placeholder='Your Website'>
+          <input required name='fields[email]' type='email' placeholder='Your Email'>
+          <textarea required name='fields[body]' placeholder='Your Message' rows='10'></textarea>
+
+          
+          
+
+          
+          <div class='submit-notice'>
+            <strong class='submit-notice-text submit-success hidden'>Thanks for your comment! It will be shown on the site once it has been approved.</strong>
+            <strong class='submit-notice-text submit-failed hidden'>Sorry, there was an error with your submission. Please make sure all required fields have been completed and try again.</strong>
+          </div>
+
+          
+          <input type='submit' value='Submit' class='button'>
+          <input type='submit' value='Submitted' class='hidden button' disabled>
+          <input type='reset' value='Reset' class='button'>
+        </form>
+    </div>
+
+    
+    <div>
+      <h2>Comments</h2>
+    </div>
+  </article>
+
+
+  
+  <div class="pagination">
+    
+    
+      <a href="/post/blog5/" class="button right"><span>SSH verbinden(Deutsch/中文 )</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/post/blog6/">Multithreading --&gt; Thread and Runnable</a></h2>
+          <time class="published" datetime="2020-10-22 20:28:09 &#43;0200 CEST">October 22, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/post/blog5/">SSH verbinden(Deutsch/中文 )</a></h2>
+          <time class="published" datetime="2020-10-15 15:25:16 &#43;0200 CEST">October 15, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/post/blog4/">Linux experimental environment in multi-node （Deutsch/ 中文）</a></h2>
+          <time class="published" datetime="2020-10-11 22:03:28 &#43;0200 CEST">October 11, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/post/blog3/">Hugo Website erstellen</a></h2>
+          <time class="published" datetime="2020-10-09 12:38:06 &#43;0200 CEST">October 9, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          
+        <header>
+          <h2><a href="/post/blog2/">Markdown</a></h2>
+          <time class="published" datetime="2020-10-09 12:38:02 &#43;0200 CEST">October 9, 2020</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>About me, Ding.</p>
+      <footer>
+        <a href="/about" class="button">Learn More</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/seeyouding0108/seeyouding0108.github.io" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/example" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+<li><a href="//linkedin.com/company/examplebusiness" target="_blank" rel="noopener" title="LinkedIn Company" class="fab fa-linkedin"></a></li>
+
+
+
+<li><a href="//facebook.com/example" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+<li><a href="//reddit.com/user/example" target="_blank" rel="noopener" title="Reddit" class="fab fa-reddit"></a></li>
+
+
+
+
+
+
+
+<li><a href="//instagram.com/example" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/example" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+<li><a href="//pinterest.com/example" target="_blank" rel="noopener" title="Pinterest" class="fab fa-pinterest-p"></a></li>
+<li><a href="//telegram.me/example" target="_blank" rel="noopener" title="telegram" class="fab fa-telegram"></a></li>
+
+
+
+<li><a href="//researchgate.net/profile/example" target="_blank" rel="noopener" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
+<li><a href="//keybase.io/example" target="_blank" rel="noopener" title="keybase" class="fab fa-keybase"></a></li>
+<li><a href="//example.com/@example" target="_blank" rel="noopener" title="mastodon" class="fab fa-mastodon"></a></li>
+<li><a href="mailto:dingsiyu0107@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2020 Siyu&#39;site
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.75.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.3329ba6007b33a66b19c6d643b5df991a6a4cd43094dfd494a6df1053f7d2141.js" integrity="sha256-Mym6YAezOmaxnG1kO135kaakzUMJTf1JSm3xBT99IUE="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>
