@@ -8,23 +8,13 @@
     <language>en</language>
     <lastBuildDate>Tue, 27 Oct 2020 20:42:05 +0100</lastBuildDate><atom:link href="https://seeyouding0108.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>MySQL 配置</title>
+      <title>MySQL 配置和基本 CRUD</title>
       <link>https://seeyouding0108.github.io/post/blog7/</link>
       <pubDate>Tue, 27 Oct 2020 20:42:05 +0100</pubDate>
       
       <guid>https://seeyouding0108.github.io/post/blog7/</guid>
-      <description>MySQL   配置环境 安装成功后，并不能马上就能在命令行终端使用 mysql 命令链接数据库。因为，安装路径还没有添加到系统搜索路径(环境变量)下输入mysql -u root -p会出现：zsh: command not found: mysql的提示。此时需要配置环境变量。
-  bashshell的解决方法：
-sudo vim .bash_profile
-export PATH=${PATH}:/usr/local/mysql/bin
-然后esc退出insert状态，并在最下方输入:wq保存退出。
-source .bash_profile
-  zshshell的解决方法：
-sudo vim ~/.zshrc，在这里面添加：
-export PATH=${PATH}:/usr/local/mysql/bin
-保存后 source ~/.zshrc
-mysql -u root -p
-    修改初始密码 设置别名或添加环境变量后，就可以正常使用 mysql 命令连接数据库了。但是初次登陆会要求修改初始登陆密码。方法如下：
+      <description>MySQL  配置   配置环境 安装成功后，并不能马上就能在命令行终端使用 mysql 命令链接数据库。因为，安装路径还没有添加到系统搜索路径(环境变量)下输入mysql -u root -p会出现：zsh: command not found: mysql的提示。此时需要配置环境变量。
+ 1. bashshell的解决方法： `sudo vim .bash_profile` `export PATH=${PATH}:/usr/local/mysql/bin` 然后esc退出insert状态，并在最下方输入:wq保存退出。 `source .bash_profile` 2. zshshell的解决方法： `sudo vim ~/.zshrc`，在这里面添加： `export PATH=${PATH}:/usr/local/mysql/bin` 保存后 `source ~/.zshrc` `mysql -u root -p`    修改初始密码 设置别名或添加环境变量后，就可以正常使用 mysql 命令连接数据库了。但是初次登陆会要求修改初始登陆密码。方法如下：
 使用初始密码登陆(三种方法)：
  1. mysql -u root -p 2. mysql -h ip -u root 3. mysql --host= 127.0.0.1 --user=root --password=root 修改密码（将 [your new password] 替换成自己的新密码）：</description>
     </item>

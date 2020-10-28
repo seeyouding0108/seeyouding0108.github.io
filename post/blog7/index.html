@@ -2,45 +2,25 @@
 <html lang="en">
   <head>
   <meta charset="utf-8">
-<title>MySQL 配置 - Siyu&#39;site</title>
+<title>MySQL 配置和基本 CRUD - Siyu&#39;site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="generator" content="Hugo 0.75.1" /><meta itemprop="name" content="MySQL 配置">
-<meta itemprop="description" content="MySQL   配置环境 安装成功后，并不能马上就能在命令行终端使用 mysql 命令链接数据库。因为，安装路径还没有添加到系统搜索路径(环境变量)下输入mysql -u root -p会出现：zsh: command not found: mysql的提示。此时需要配置环境变量。
-  bashshell的解决方法：
-sudo vim .bash_profile
-export PATH=${PATH}:/usr/local/mysql/bin
-然后esc退出insert状态，并在最下方输入:wq保存退出。
-source .bash_profile
-  zshshell的解决方法：
-sudo vim ~/.zshrc，在这里面添加：
-export PATH=${PATH}:/usr/local/mysql/bin
-保存后 source ~/.zshrc
-mysql -u root -p
-    修改初始密码 设置别名或添加环境变量后，就可以正常使用 mysql 命令连接数据库了。但是初次登陆会要求修改初始登陆密码。方法如下：
+<meta name="generator" content="Hugo 0.75.1" /><meta itemprop="name" content="MySQL 配置和基本 CRUD">
+<meta itemprop="description" content="MySQL  配置   配置环境 安装成功后，并不能马上就能在命令行终端使用 mysql 命令链接数据库。因为，安装路径还没有添加到系统搜索路径(环境变量)下输入mysql -u root -p会出现：zsh: command not found: mysql的提示。此时需要配置环境变量。
+ 1. bashshell的解决方法： `sudo vim .bash_profile` `export PATH=${PATH}:/usr/local/mysql/bin` 然后esc退出insert状态，并在最下方输入:wq保存退出。 `source .bash_profile` 2. zshshell的解决方法： `sudo vim ~/.zshrc`，在这里面添加： `export PATH=${PATH}:/usr/local/mysql/bin` 保存后 `source ~/.zshrc` `mysql -u root -p`    修改初始密码 设置别名或添加环境变量后，就可以正常使用 mysql 命令连接数据库了。但是初次登陆会要求修改初始登陆密码。方法如下：
 使用初始密码登陆(三种方法)：
  1. mysql -u root -p 2. mysql -h ip -u root 3. mysql --host= 127.0.0.1 --user=root --password=root 修改密码（将 [your new password] 替换成自己的新密码）：">
 <meta itemprop="datePublished" content="2020-10-27T20:42:05+01:00" />
 <meta itemprop="dateModified" content="2020-10-27T20:42:05+01:00" />
-<meta itemprop="wordCount" content="936">
+<meta itemprop="wordCount" content="1104">
 
 
 
 <meta itemprop="keywords" content="" />
-<meta property="og:title" content="MySQL 配置" />
-<meta property="og:description" content="MySQL   配置环境 安装成功后，并不能马上就能在命令行终端使用 mysql 命令链接数据库。因为，安装路径还没有添加到系统搜索路径(环境变量)下输入mysql -u root -p会出现：zsh: command not found: mysql的提示。此时需要配置环境变量。
-  bashshell的解决方法：
-sudo vim .bash_profile
-export PATH=${PATH}:/usr/local/mysql/bin
-然后esc退出insert状态，并在最下方输入:wq保存退出。
-source .bash_profile
-  zshshell的解决方法：
-sudo vim ~/.zshrc，在这里面添加：
-export PATH=${PATH}:/usr/local/mysql/bin
-保存后 source ~/.zshrc
-mysql -u root -p
-    修改初始密码 设置别名或添加环境变量后，就可以正常使用 mysql 命令连接数据库了。但是初次登陆会要求修改初始登陆密码。方法如下：
+<meta property="og:title" content="MySQL 配置和基本 CRUD" />
+<meta property="og:description" content="MySQL  配置   配置环境 安装成功后，并不能马上就能在命令行终端使用 mysql 命令链接数据库。因为，安装路径还没有添加到系统搜索路径(环境变量)下输入mysql -u root -p会出现：zsh: command not found: mysql的提示。此时需要配置环境变量。
+ 1. bashshell的解决方法： `sudo vim .bash_profile` `export PATH=${PATH}:/usr/local/mysql/bin` 然后esc退出insert状态，并在最下方输入:wq保存退出。 `source .bash_profile` 2. zshshell的解决方法： `sudo vim ~/.zshrc`，在这里面添加： `export PATH=${PATH}:/usr/local/mysql/bin` 保存后 `source ~/.zshrc` `mysql -u root -p`    修改初始密码 设置别名或添加环境变量后，就可以正常使用 mysql 命令连接数据库了。但是初次登陆会要求修改初始登陆密码。方法如下：
 使用初始密码登陆(三种方法)：
  1. mysql -u root -p 2. mysql -h ip -u root 3. mysql --host= 127.0.0.1 --user=root --password=root 修改密码（将 [your new password] 替换成自己的新密码）：" />
 <meta property="og:type" content="article" />
@@ -48,19 +28,9 @@ mysql -u root -p
 <meta property="article:published_time" content="2020-10-27T20:42:05+01:00" />
 <meta property="article:modified_time" content="2020-10-27T20:42:05+01:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MySQL 配置"/>
-<meta name="twitter:description" content="MySQL   配置环境 安装成功后，并不能马上就能在命令行终端使用 mysql 命令链接数据库。因为，安装路径还没有添加到系统搜索路径(环境变量)下输入mysql -u root -p会出现：zsh: command not found: mysql的提示。此时需要配置环境变量。
-  bashshell的解决方法：
-sudo vim .bash_profile
-export PATH=${PATH}:/usr/local/mysql/bin
-然后esc退出insert状态，并在最下方输入:wq保存退出。
-source .bash_profile
-  zshshell的解决方法：
-sudo vim ~/.zshrc，在这里面添加：
-export PATH=${PATH}:/usr/local/mysql/bin
-保存后 source ~/.zshrc
-mysql -u root -p
-    修改初始密码 设置别名或添加环境变量后，就可以正常使用 mysql 命令连接数据库了。但是初次登陆会要求修改初始登陆密码。方法如下：
+<meta name="twitter:title" content="MySQL 配置和基本 CRUD"/>
+<meta name="twitter:description" content="MySQL  配置   配置环境 安装成功后，并不能马上就能在命令行终端使用 mysql 命令链接数据库。因为，安装路径还没有添加到系统搜索路径(环境变量)下输入mysql -u root -p会出现：zsh: command not found: mysql的提示。此时需要配置环境变量。
+ 1. bashshell的解决方法： `sudo vim .bash_profile` `export PATH=${PATH}:/usr/local/mysql/bin` 然后esc退出insert状态，并在最下方输入:wq保存退出。 `source .bash_profile` 2. zshshell的解决方法： `sudo vim ~/.zshrc`，在这里面添加： `export PATH=${PATH}:/usr/local/mysql/bin` 保存后 `source ~/.zshrc` `mysql -u root -p`    修改初始密码 设置别名或添加环境变量后，就可以正常使用 mysql 命令连接数据库了。但是初次登陆会要求修改初始登陆密码。方法如下：
 使用初始密码登陆(三种方法)：
  1. mysql -u root -p 2. mysql -h ip -u root 3. mysql --host= 127.0.0.1 --user=root --password=root 修改密码（将 [your new password] 替换成自己的新密码）："/>
 <meta name="twitter:site" content="@example"/>
@@ -75,7 +45,7 @@ mysql -u root -p
     <h1 class="nav-title">
       <a href="/" class="nav">
         
-          MySQL 配置
+          MySQL 配置和基本 CRUD
         
       </a>
     </h1>
@@ -170,7 +140,7 @@ mysql -u root -p
 
   
     
-    <a href="//twitter.com/share?text=MySQL%20%e9%85%8d%e7%bd%ae&amp;url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+    <a href="//twitter.com/share?text=MySQL%20%e9%85%8d%e7%bd%ae%e5%92%8c%e5%9f%ba%e6%9c%ac%20CRUD&amp;url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
         <p>Twitter</p>
       </a>
   
@@ -182,19 +152,19 @@ mysql -u root -p
   
 
   
-    <a href="//www.reddit.com/submit?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;title=MySQL%20%e9%85%8d%e7%bd%ae" target="_blank" rel="noopener" class="nav share-btn reddit">
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;title=MySQL%20%e9%85%8d%e7%bd%ae%e5%92%8c%e5%9f%ba%e6%9c%ac%20CRUD" target="_blank" rel="noopener" class="nav share-btn reddit">
           <p>Reddit</p>
         </a>
   
 
   
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;title=MySQL%20%e9%85%8d%e7%bd%ae" target="_blank" rel="noopener" class="nav share-btn linkedin">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;title=MySQL%20%e9%85%8d%e7%bd%ae%e5%92%8c%e5%9f%ba%e6%9c%ac%20CRUD" target="_blank" rel="noopener" class="nav share-btn linkedin">
             <p>LinkedIn</p>
           </a>
   
 
   
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;description=MySQL%20%e9%85%8d%e7%bd%ae" target="_blank" rel="noopener" class="nav share-btn pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;description=MySQL%20%e9%85%8d%e7%bd%ae%e5%92%8c%e5%9f%ba%e6%9c%ac%20CRUD" target="_blank" rel="noopener" class="nav share-btn pinterest">
           <p>Pinterest</p>
         </a>
   
@@ -277,14 +247,14 @@ mysql -u root -p
     <header>
   <div class="title">
     
-      <h2><a href="/post/blog7/">MySQL 配置</a></h2>
+      <h2><a href="/post/blog7/">MySQL 配置和基本 CRUD</a></h2>
     
     
   </div>
   <div class="meta">
     <time datetime="2020-10-27 20:42:05 &#43;0100 CET">October 27, 2020</time>
     
-    <p>5-Minute Read</p>
+    <p>6-Minute Read</p>
   </div>
 </header>
 
@@ -296,7 +266,7 @@ mysql -u root -p
 
   
     
-    <a href="//twitter.com/share?text=MySQL%20%e9%85%8d%e7%bd%ae&amp;url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+    <a href="//twitter.com/share?text=MySQL%20%e9%85%8d%e7%bd%ae%e5%92%8c%e5%9f%ba%e6%9c%ac%20CRUD&amp;url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
         <p>Twitter</p>
       </a>
   
@@ -308,19 +278,19 @@ mysql -u root -p
   
 
   
-    <a href="//www.reddit.com/submit?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;title=MySQL%20%e9%85%8d%e7%bd%ae" target="_blank" rel="noopener" class="nav share-btn reddit">
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;title=MySQL%20%e9%85%8d%e7%bd%ae%e5%92%8c%e5%9f%ba%e6%9c%ac%20CRUD" target="_blank" rel="noopener" class="nav share-btn reddit">
           <p>Reddit</p>
         </a>
   
 
   
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;title=MySQL%20%e9%85%8d%e7%bd%ae" target="_blank" rel="noopener" class="nav share-btn linkedin">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;title=MySQL%20%e9%85%8d%e7%bd%ae%e5%92%8c%e5%9f%ba%e6%9c%ac%20CRUD" target="_blank" rel="noopener" class="nav share-btn linkedin">
             <p>LinkedIn</p>
           </a>
   
 
   
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;description=MySQL%20%e9%85%8d%e7%bd%ae" target="_blank" rel="noopener" class="nav share-btn pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fseeyouding0108.github.io%2fpost%2fblog7%2f&amp;description=MySQL%20%e9%85%8d%e7%bd%ae%e5%92%8c%e5%9f%ba%e6%9c%ac%20CRUD" target="_blank" rel="noopener" class="nav share-btn pinterest">
           <p>Pinterest</p>
         </a>
   
@@ -337,26 +307,32 @@ mysql -u root -p
       
       <h2 id="mysql">MySQL</h2>
 <ul>
+<li><em><strong>配置</strong></em>
+<ul>
 <li>
 <p>配置环境
 安装成功后，并不能马上就能在命令行终端使用 mysql 命令链接数据库。因为，安装路径还没有添加到系统搜索路径(环境变量)下输入<code>mysql -u root -p</code>会出现：zsh: command not found: mysql的提示。此时需要配置环境变量。</p>
-<ol>
-<li>
-<p>bashshell的解决方法：</p>
-<p><code>sudo vim .bash_profile</code></p>
-<p><code>export PATH=${PATH}:/usr/local/mysql/bin</code></p>
-<p>然后esc退出insert状态，并在最下方输入:wq保存退出。</p>
-<p><code>source .bash_profile</code></p>
-</li>
-<li>
-<p>zshshell的解决方法：</p>
-<p><code>sudo vim ~/.zshrc</code>，在这里面添加：</p>
-<p><code>export PATH=${PATH}:/usr/local/mysql/bin</code></p>
-<p>保存后 <code>source ~/.zshrc</code></p>
-<p><code>mysql -u root -p</code></p>
-</li>
-</ol>
-</li>
+<pre><code>  1. bashshell的解决方法：  
+
+      `sudo vim .bash_profile`
+
+      `export PATH=${PATH}:/usr/local/mysql/bin`
+
+      然后esc退出insert状态，并在最下方输入:wq保存退出。
+            
+      `source .bash_profile`
+
+  2. zshshell的解决方法：
+
+      `sudo vim ~/.zshrc`，在这里面添加：
+
+      `export PATH=${PATH}:/usr/local/mysql/bin`
+
+      保存后 `source ~/.zshrc`
+
+      `mysql -u root -p`
+</code></pre>
+<ul>
 <li>
 <p>修改初始密码
 设置别名或添加环境变量后，就可以正常使用 mysql 命令连接数据库了。但是初次登陆会要求修改初始登陆密码。方法如下：</p>
@@ -534,8 +510,8 @@ interactive-timeout
 都变成了utf - 8</li>
 <li>测试新建的database是不是utf-8
 <ul>
-<li><code>mysql&gt; create database db1; </code></li>
-<li><code>mysql&gt; show create databases db1</code>
+<li><code>mysql&gt; create database db1;</code></li>
+<li><code>mysql&gt; show create databases db1;</code>
 +&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
 | Database | Create Database                                              |
 +&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
@@ -544,6 +520,192 @@ interactive-timeout
 </ul>
 </li>
 </ol>
+</li>
+</ul>
+</li>
+<li>
+<p><em><strong>基本CRUD语句</strong></em></p>
+<ul>
+<li>DDL（data definition language）</li>
+<li>DML（data manipulation language）</li>
+<li>DCL（Data Control Language）</li>
+</ul>
+<h3 id="操作数据库">操作数据库：</h3>
+<ol>
+<li>(Create) 创建
+<ul>
+<li>创建数据库：
+<ul>
+<li><code>create database 数据库名称；</code></li>
+</ul>
+</li>
+<li>创建数据库，判断是否存在，再创建：
+<ul>
+<li><code>create database if not exists 数据库名称;</code></li>
+</ul>
+</li>
+<li>创建数据库， 并且指定字符集
+<ul>
+<li><code>create database character set 字符集名;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(Retrieve) 查询
+<ul>
+<li>查询所有数据库名称
+<ul>
+<li><code>show databases;</code></li>
+</ul>
+</li>
+<li>查询某个数据库的字符集
+<ul>
+<li><code>show create database 数据库名称；</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(Update) 修改
+<ul>
+<li>修改数据库的字符集
+<ul>
+<li><code>alter database 数据库名称 character set 字符集名称；</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(Delete) 删除
+<ul>
+<li>删除数据库
+<ul>
+<li><code>drop database 数据库名称</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用数据库
+<ul>
+<li>查询当前正在使用的数据库名称
+<ul>
+<li><code>select database();</code></li>
+</ul>
+</li>
+<li>使用数据库
+<ul>
+<li><code>use 数据库名称；</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="操作表">操作表：</h3>
+<ol>
+<li>(Create) 创建
+<ol>
+<li>语法：
+<ul>
+<li>create table 表名(
+列名1 数据类型1,
+列名2 数据类型1,
+&hellip;
+列名n 数据类型n
+);</li>
+<li>数据类型：
+<ol>
+<li>int
+<ul>
+<li>age int,</li>
+</ul>
+</li>
+<li>double
+<ul>
+<li>score double(5,2)</li>
+</ul>
+</li>
+<li>date
+<ul>
+<li>只包含年月日，yyyy-MM-dd</li>
+</ul>
+</li>
+<li>datetime
+<ul>
+<li>包含年月日时分秒，yyyy-MM-dd HH:mm:ss</li>
+</ul>
+</li>
+<li>datestamp
+<ul>
+<li>包含年月日时分秒，yyyy-MM-dd HH:mm:ss 如果没有赋值，这默认使用当前时间</li>
+</ul>
+</li>
+<li>varchar
+<ul>
+<li>name varchar(20):姓名最多20个字符</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>复制表
+<ul>
+<li>create table 表名 like 被复制的表名；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>(Retrieve) 查询
+<ol>
+<li>查询表
+<ul>
+<li>show tables;</li>
+</ul>
+</li>
+<li>查询表结构
+<ul>
+<li>desc 表名;</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>(Update) 修改
+<ol>
+<li>修改表名
+<ul>
+<li>alter table 表名 rename to 新表名</li>
+</ul>
+</li>
+<li>修改表的字符集
+<ul>
+<li>alter table 表名 character set 字符集名称</li>
+</ul>
+</li>
+<li>添加1列
+<ul>
+<li>alter table 表名 add 列名 数据类型；</li>
+</ul>
+</li>
+<li>修改列名称 类型
+<ul>
+<li>alter table 表名 change 列名 新列名 新数据类型</li>
+<li>alter table 表名 modify 列名 新数据类型；</li>
+</ul>
+</li>
+<li>删除列
+<ul>
+<li>alter table 表名 drop 列名；</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>(Delete) 删除
+<ul>
+<li>drop table 表名</li>
+<li>drop table if exist 表名</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
 </li>
 </ul>
 
@@ -630,7 +792,7 @@ interactive-timeout
       <article class="mini-post">
           
         <header>
-          <h2><a href="/post/blog7/">MySQL 配置</a></h2>
+          <h2><a href="/post/blog7/">MySQL 配置和基本 CRUD</a></h2>
           <time class="published" datetime="2020-10-27 20:42:05 &#43;0100 CET">October 27, 2020</time>
         </header>
       </article>
