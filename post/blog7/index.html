@@ -13,7 +13,7 @@
  1. mysql -u root -p 2. mysql -h ip -u root 3. mysql --host= 127.0.0.1 --user=root --password=root 修改密码（将 [your new password] 替换成自己的新密码）：">
 <meta itemprop="datePublished" content="2020-10-27T20:42:05+01:00" />
 <meta itemprop="dateModified" content="2020-10-27T20:42:05+01:00" />
-<meta itemprop="wordCount" content="1104">
+<meta itemprop="wordCount" content="1202">
 
 
 
@@ -530,7 +530,7 @@ interactive-timeout
 <li>DML（data manipulation language）</li>
 <li>DCL（Data Control Language）</li>
 </ul>
-<h3 id="操作数据库">操作数据库：</h3>
+<h3 id="ddl-操作数据库">DDL 操作数据库：</h3>
 <ol>
 <li>(Create) 创建
 <ul>
@@ -598,7 +598,7 @@ interactive-timeout
 </ul>
 </li>
 </ol>
-<h3 id="操作表">操作表：</h3>
+<h3 id="ddl-操作表">DDL 操作表：</h3>
 <ol>
 <li>(Create) 创建
 <ol>
@@ -701,6 +701,116 @@ interactive-timeout
 <ul>
 <li>drop table 表名</li>
 <li>drop table if exist 表名</li>
+</ul>
+</li>
+</ol>
+<h3 id="dml-增删改查表中数据">DML: 增删改查表中数据</h3>
+<ol>
+<li>添加数据：
+<ul>
+<li>语法：
+<ul>
+<li>insert into 表名(列名1，列名2，&hellip; ,列名n) values(值1，值2，&hellip;,值n) ；</li>
+</ul>
+</li>
+<li>注意：
+<ol>
+<li>列名和值一一对应</li>
+<li>如果表名后不定义列名，这给所有列添加值</li>
+<li>除了数字类型，其他类型都要用引号</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>删除数据
+<ul>
+<li>语法：
+<ul>
+<li>delete from 表名 where 条件；</li>
+</ul>
+</li>
+<li>注意
+<ol>
+<li>如果不添加条件，则删除表中所有数据</li>
+<li>如果要删除所有记录推荐使用 truncate table 表名 ， 这个效率更高</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>修改数据
+<ul>
+<li>语法：
+<ul>
+<li>update 表名 set 列名1= 值1， 列名2= 值2，&hellip; where 条件；若不添加任何条件，则修改所有记录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="dql查询表中的记录">DQL:查询表中的记录</h3>
+<p>-select * from 表名</p>
+<ol>
+<li>
+<p>语法：</p>
+<ul>
+<li>select
+字段列表</li>
+<li>from
+表名列表</li>
+<li>where
+条件列表</li>
+<li>group by
+分组字段</li>
+<li>having
+分组之后的条件</li>
+<li>order by
+排序</li>
+<li>limit
+分页限定</li>
+</ul>
+</li>
+<li>
+<p>基础查询：</p>
+<ol>
+<li>多个字段的查询：
+<ul>
+<li>select 字段名1，字段名2 ,&hellip; ,from 表名；</li>
+<li>如果用* 则可以查询所有字段</li>
+</ul>
+</li>
+<li>去除重复：
+<ul>
+<li>disdinct</li>
+</ul>
+</li>
+<li>计算列：
+<ul>
+<li>四则运算计算列</li>
+<li>ifnull（表达式1，表达式2）
+<ul>
+<li>表达式1：哪个字段需要判断为null</li>
+<li>如果该字段为null后的替换纸为表达式2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>起别名：
+<ul>
+<li>as</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>条件查询：</p>
+<ul>
+<li>select 字段 from 表名 where 条件</li>
+<li>运算符，逻辑判断</li>
+<li>除了运算符，还有like （模糊查找）
+<ul>
+<li>where name like'%&hellip;%'  &ndash;&gt; _占1位符 %占多位</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
