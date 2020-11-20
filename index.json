@@ -26,7 +26,7 @@
     "title": "Contact_me",
     "date": "",
     "description": "",
-    "body": "Email：dingsiyu0107@gmail.com ",
+    "body": "Email：seeyou.magician@gmail.com ",
     "ref": "/contact/"
   },{
     "title": "Class",
@@ -38,7 +38,7 @@
     "title": "About_me",
     "date": "",
     "description": "",
-    "body": "Hi ！ it\u0026rsquo;s me Ding Nice to see you！ i\u0026rsquo;m studying in Leibniz University Hannover Germany . major mechanical. Love coding just like you. If you got any question about my blogs , just contact me in (Chinese;Deutsch;English) : dingsiyu0107@gmail.com ",
+    "body": "Hi ！ it\u0026rsquo;s me Ding Nice to see you！ i\u0026rsquo;m studying in Leibniz University Hannover Germany . major mechanical. Love coding just like you. If you got any question about my blogs , just contact me in (Chinese;Deutsch;English) : seeyou.magician@gmail.com ",
     "ref": "/about/"
   },{
     "title": "Hugo Website erstellen",
@@ -56,6 +56,6 @@
     "title": "hugo 静态网页创建",
     "date": "",
     "description": "",
-    "body": "hugo 静态网页创建(准备) 1）hugo 必要的工具  homebrew （是一款Mac OS上的软件包管理工具，通过它可以很方便的安装/卸载软件工具等，类似于Linux下的apt-get，node的npm等包管理工具） hugo （Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。） git （版本控制）  2)安装方法 homebrew：  terminal输入 /usr/bin/ruby -e \u0026quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install 自动完成安装  hogo 利用braw：  brew install hugo  git：  brew install git   hugo 网页创建   hugo new site myblog生成站点 myblog 可替换\n  打开网页theme.gohugo.io找主题\n  cd myblog进入path\n  例如：git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c在themes目录下下载m10c主题\n  hugo server -t m10c --buildDrafts本地启动服务器 在terminal中找到localhost地址，可检查网页是否本地成功打开\n  写文档：hugo new post/blog.md创建第一个markdown文档\n  在远端github 创建repository\n  hugo --theme=m10c --baseUrl=\u0026quot;http://XXXXXXX.github.io/\u0026quot; --buildDrafts 关联远端地址自动生成public文件\n   cd public/ git init //初始化public文件夹使之成为git包 git add . git commit -m\u0026quot;my hugo first blog\u0026quot; git remote add origin http://github.com/xxxxxxx/xxxxxxx.github.io.git git push -u origin master //first time  -更新页面\ncd myblog hugo cd public git add . git status git commit -m \u0026quot;add blog post\u0026quot; git push 有问题？ 搞不成？ 问我！ Email ： dingsiyu0107@gmail.com\n",
+    "body": "hugo 静态网页创建(准备) 1）hugo 必要的工具  homebrew （是一款Mac OS上的软件包管理工具，通过它可以很方便的安装/卸载软件工具等，类似于Linux下的apt-get，node的npm等包管理工具） hugo （Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。） git （版本控制）  2)安装方法 homebrew：  terminal输入 /usr/bin/ruby -e \u0026quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install 自动完成安装  hogo 利用braw：  brew install hugo  git：  brew install git   hugo 网页创建   hugo new site myblog生成站点 myblog 可替换\n  打开网页theme.gohugo.io找主题\n  cd myblog进入path\n  例如：git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c在themes目录下下载m10c主题\n  hugo server -t m10c --buildDrafts本地启动服务器 在terminal中找到localhost地址，可检查网页是否本地成功打开\n  写文档：hugo new post/blog.md创建第一个markdown文档\n  在远端github 创建repository\n  hugo --theme=m10c --baseUrl=\u0026quot;http://XXXXXXX.github.io/\u0026quot; --buildDrafts 关联远端地址自动生成public文件\n   cd public/ git init //初始化public文件夹使之成为git包 git add . git commit -m\u0026quot;my hugo first blog\u0026quot; git remote add origin http://github.com/xxxxxxx/xxxxxxx.github.io.git git push -u origin master //first time  -更新页面\ncd myblog hugo cd public git add . git status git commit -m \u0026quot;add blog post\u0026quot; git push ",
     "ref": "/post/blog1/"
   }]
