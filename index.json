@@ -1,4 +1,16 @@
 [{
+    "title": "Blog9",
+    "date": "",
+    "description": "",
+    "body": "Schnellste Konfigurieren der C-Sprachentwicklungsumgebung in VS Code(Mac). a) Vorbereitung  Überprüfen Sie das clang  Überprüfen Sie, ob der verwendete Mac mit Clang geliefert wird\nclang -v Sie können xcode direkt mit gcc installieren\nInstallation   shift+command+X und suche nach C / C ++.   -Installieren Sie Code Runner Erstellen Sie eine Demo-Datei  b) Konfiguration   Um die C-Datei in vs-Code auszuführen, müssen Sie 2 JSON-Dateien konfigurieren\n launch.json tasks.json    launch.json\n Klicken Sie, um die C-Datei zu öffnen, klicken Sie auf das obere Menü der IDE, Ausführen -\u0026gt; Debug start -\u0026gt; Wählen Sie C / C ++: Clang Build Active File ! [WeChat9e051790960776a5abf6221d229d0df4.png] (https://i.loli.net/2020/11/21/MscHxmdYFo6tXvy.png)    task.json\n Klicken Sie hier, um die C-Datei zu öffnen. Mit der Tastenkombination shift+command+X wird das Befehlszeilenfenster geöffnet. Geben Sie Aufgaben ein: Aufgabe konfigurieren, Wählen Sie Aufgaben: Aufgabe konfigurieren -\u0026gt; Wählen Sie C / C ++: Aktive Datei gcc build Wenn es keinen Benutzer mit Optionen gibt, klicken Sie auf das Hauptmenü der IDE, Terminal-\u0026gt; Aufgaben konfigurieren-\u0026gt; wählen Sie C / C ++: Clang Build Active File -\u0026gt; Die Datei Tasks.json wird automatisch generiert.      c) Code Runner Datei direkt ausführen\n",
+    "ref": "/post/blog9/"
+  },{
+    "title": "Blog8",
+    "date": "",
+    "description": "",
+    "body": "VS Code最快配置 C 语言开发环境（mac） a) 准备  检查 clang  检查所使用的mac是否自带了clang\nclang -v 可以直接安装 xcode ，自带gcc\n安装    shift+command+X ，并搜索C/C++。   安装Code Runner   创建一个demo 文件  b）配置 在vs code运行C文件需要配置2个json文件\n  launch.json\n  tasks.json\n launch.json 点击打开.c文件，点击IDE上方菜单，Run -\u0026gt; Start Debugging -\u0026gt; 选择 C/C++: clang build active file  tasks.json 点击打开.c文件，快捷键 command+shift+P打开命令行面板，输入tasks:configure task，选择 Tasks:Configure Task -\u0026gt; 选择 C/C++:gcc build active file 如果没有可选项的用户，点击IDE上方菜单，Terminal-\u0026gt; Configure Tasks-\u0026gt; 选择 C/C++:clang build active file -\u0026gt;会自动生成tasks.json文件。    c) Code Runner 直接执行文件\n",
+    "ref": "/post/blog8/"
+  },{
     "title": "MySQL 配置和基本 CRUD",
     "date": "",
     "description": "",

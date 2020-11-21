@@ -6,7 +6,32 @@
     <description>Recent content in Post on Siyu&#39;site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Oct 2020 20:42:05 +0100</lastBuildDate><atom:link href="https://seeyouding0108.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Nov 2020 13:32:55 +0100</lastBuildDate><atom:link href="https://seeyouding0108.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog9</title>
+      <link>https://seeyouding0108.github.io/post/blog9/</link>
+      <pubDate>Sat, 21 Nov 2020 13:32:55 +0100</pubDate>
+      
+      <guid>https://seeyouding0108.github.io/post/blog9/</guid>
+      <description>Schnellste Konfigurieren der C-Sprachentwicklungsumgebung in VS Code(Mac). a) Vorbereitung  Überprüfen Sie das clang  Überprüfen Sie, ob der verwendete Mac mit Clang geliefert wird
+clang -v Sie können xcode direkt mit gcc installieren
+Installation   shift+command+X und suche nach C / C ++.   -Installieren Sie Code Runner Erstellen Sie eine Demo-Datei  b) Konfiguration   Um die C-Datei in vs-Code auszuführen, müssen Sie 2 JSON-Dateien konfigurieren</description>
+    </item>
+    
+    <item>
+      <title>Blog8</title>
+      <link>https://seeyouding0108.github.io/post/blog8/</link>
+      <pubDate>Sat, 21 Nov 2020 12:51:54 +0100</pubDate>
+      
+      <guid>https://seeyouding0108.github.io/post/blog8/</guid>
+      <description>VS Code最快配置 C 语言开发环境（mac） a) 准备  检查 clang  检查所使用的mac是否自带了clang
+clang -v 可以直接安装 xcode ，自带gcc
+安装    shift+command+X ，并搜索C/C++。   安装Code Runner   创建一个demo 文件  b）配置 在vs code运行C文件需要配置2个json文件
+  launch.json
+  tasks.json
+ launch.json 点击打开.c文件，点击IDE上方菜单，Run -&amp;gt; Start Debugging -&amp;gt; 选择 C/C++: clang build active file  tasks.json 点击打开.c文件，快捷键 command+shift+P打开命令行面板，输入tasks:configure task，选择 Tasks:Configure Task -&amp;gt; 选择 C/C++:gcc build active file 如果没有可选项的用户，点击IDE上方菜单，Terminal-&amp;gt; Configure Tasks-&amp;gt; 选择 C/C++:clang build active file -&amp;gt;会自动生成tasks.</description>
+    </item>
+    
     <item>
       <title>MySQL 配置和基本 CRUD</title>
       <link>https://seeyouding0108.github.io/post/blog7/</link>
