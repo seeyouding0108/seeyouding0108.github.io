@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Siyu&#39;site</title>
-    <link>uildDrafts/categories/</link>
+    <link>https://seeyouding0108.github.io/categories/</link>
     <description>Recent content in Categories on Siyu&#39;site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="uildDrafts/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://seeyouding0108.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
